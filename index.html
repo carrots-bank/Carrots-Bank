@@ -6,53 +6,64 @@
     <title>Carrot Bank Lending</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #fff;
+            background-color: #f5f5f5;
+            color: #333;
         }
         .header, .footer {
-            background-color: #000;
+            background-color: #004d00;
             padding: 20px;
             text-align: center;
         }
         .header a, .footer a {
-            color: #FFA500;
+            color: #fff;
             margin: 0 15px;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+        .header a:hover, .footer a:hover {
+            color: #7fff00;
         }
         .hero {
-            background-color: #000;
+            background: url('https://example.com/carrot_image.jpg') no-repeat center center/cover;
             padding: 100px 20px;
             text-align: center;
+            color: #fff;
         }
         .hero h1 {
-            color: #FFA500;
             font-size: 48px;
+            animation: fadeIn 2s;
         }
         .hero p {
-            color: #FFA500;
             font-size: 24px;
+            animation: fadeIn 2s 1s;
         }
         .hero button {
-            background-color: #FFA500;
-            color: #000;
+            background-color: #7fff00;
+            color: #004d00;
             border: none;
             padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
+            animation: fadeIn 2s 2s;
+        }
+        .hero button:hover {
+            background-color: #004d00;
+            color: #7fff00;
         }
         .section {
             padding: 60px 20px;
             text-align: center;
         }
-        .section.orange {
-            background-color: #FFA500;
-            color: #000;
+        .section.green {
+            background-color: #7fff00;
+            color: #004d00;
         }
-        .section.black {
-            background-color: #000;
-            color: #FFA500;
+        .section.dark-green {
+            background-color: #004d00;
+            color: #7fff00;
         }
         .section h2 {
             font-size: 36px;
@@ -67,6 +78,7 @@
         .feature, .step {
             width: 30%;
             margin: 20px 0;
+            text-align: left;
         }
         .feature p, .step p {
             margin: 10px 0 0;
@@ -79,6 +91,7 @@
         .testimonial {
             width: 60%;
             margin: 20px 0;
+            font-style: italic;
         }
         .faq {
             text-align: left;
@@ -89,18 +102,27 @@
             margin: 20px 0;
         }
         .call-to-action {
-            background-color: #FFA500;
-            color: #000;
+            background-color: #7fff00;
+            color: #004d00;
             padding: 60px 20px;
             text-align: center;
         }
         .call-to-action button {
-            background-color: #000;
-            color: #FFA500;
+            background-color: #004d00;
+            color: #7fff00;
             border: none;
             padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .call-to-action button:hover {
+            background-color: #7fff00;
+            color: #004d00;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -116,46 +138,52 @@
 <div class="hero">
     <h1>Achieve Your Dreams with Carrot Bank</h1>
     <p>Flexible Lending Options for Every Need</p>
-    <button>Get Started</button>
+    <button onclick="window.location.href='#apply'">Get Started</button>
 </div>
 
-<div class="section orange">
+<div class="section green">
     <h2>Our Features</h2>
     <div class="features">
         <div class="feature">
+            <img src="https://example.com/coin_image.jpg" alt="Low Interest Rates" style="width: 100%;">
             <h3>Low Interest Rates</h3>
             <p>Enjoy competitive rates that fit your budget.</p>
         </div>
         <div class="feature">
+            <img src="https://example.com/coin_image.jpg" alt="Easy Application" style="width: 100%;">
             <h3>Easy Application</h3>
             <p>Quick and simple application process.</p>
         </div>
         <div class="feature">
+            <img src="https://example.com/coin_image.jpg" alt="Flexible Terms" style="width: 100%;">
             <h3>Flexible Terms</h3>
             <p>Choose repayment terms that suit your financial situation.</p>
         </div>
     </div>
 </div>
 
-<div class="section black">
+<div class="section dark-green">
     <h2>How It Works</h2>
     <div class="how-it-works">
         <div class="step">
+            <img src="https://example.com/carrot_image.jpg" alt="Apply Online" style="width: 100%;">
             <h3>Apply Online</h3>
             <p>Fill out our easy online application.</p>
         </div>
         <div class="step">
+            <img src="https://example.com/carrot_image.jpg" alt="Get Approved" style="width: 100%;">
             <h3>Get Approved</h3>
             <p>Receive a decision in minutes.</p>
         </div>
         <div class="step">
+            <img src="https://example.com/carrot_image.jpg" alt="Receive Funds" style="width: 100%;">
             <h3>Receive Funds</h3>
             <p>Get the money you need quickly and securely.</p>
         </div>
     </div>
 </div>
 
-<div class="section orange">
+<div class="section green">
     <h2>Testimonials</h2>
     <div class="testimonials">
         <div class="testimonial">
@@ -170,7 +198,7 @@
     </div>
 </div>
 
-<div class="section black">
+<div class="section dark-green">
     <h2>FAQ</h2>
     <div class="faq">
         <h3>What are the interest rates?</h3>
@@ -182,10 +210,10 @@
     </div>
 </div>
 
-<div class="call-to-action">
+<div class="call-to-action" id="apply">
     <h2>Ready to Get Started?</h2>
     <p>Apply now and take the first step towards achieving your financial goals.</p>
-    <button>Apply Now</button>
+    <button onclick="window.location.href='#'">Apply Now</button>
 </div>
 
 <div class="footer">
